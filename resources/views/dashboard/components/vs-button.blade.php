@@ -1,4 +1,4 @@
-<div class="">
+<div class="{{$dev_class}}">
     <button 
         type ="{{$btn_type}}" 
         id   ="{{$btn_unique_id}}" 

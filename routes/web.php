@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $hello = 'hello';
-    return view('dashboard.users.index', compact('hello'));
+Route::namespace('Dashboard')->group(function(){
+    // route
+    Route::get('/', 'DashboardController@index');
 });
