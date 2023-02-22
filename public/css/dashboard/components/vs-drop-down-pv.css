@@ -1,0 +1,15 @@
+.bg-blue-old{
+    background-color: #4e73df !important;
+    padding: 0 40px 0 40px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: rgb(113, 113, 114) !important;
+    font-size: 14px !important;
+    line-height: 37px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    margin-top: 5px !important;
+}
+.select2-container .select2-selection--single {
+    height: 42px !important;
+}
