@@ -47,17 +47,17 @@
             <option value="" selected hidden>{{ ucwords($prompt) }}</option>
         @endunless
 
-        @if ($selectType === 'static')
-            <option 
+        {{-- @if ($selectType === 'static') --}}
+            {{-- <option 
                 value = ""
                 {{ isset($option_attributes) ? $option_attributes : '' }}
             >
                 Demo Value
-            </option>
-        @else
+            </option> --}}
+        {{-- @else
             @foreach ($collections as $item)
                 <option value=""></option>
             @endforeach
-        @endif
+        @endif --}}
     </select>    
 </div>

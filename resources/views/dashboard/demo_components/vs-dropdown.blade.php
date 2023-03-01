@@ -22,6 +22,15 @@
             'prompt'     => 'select currency',
             'selectType' => 'static',
         ])
+
+        <!-- dynamic selection -->
+        @include('components.vs-dropdown', [
+            'component_wrapper_class' => 'mt-3',
+            'unique_id'               => 'select-code-003',
+            'prompt'                  => 'select product varaint',
+            'selectType'              => 'dynamic',
+        ])
+        <input type="hidden" id="productVariants" value="{{$productVariantsCollections}}">
     </div>
 @endsection
 
@@ -38,6 +47,9 @@
 
             const currencies = getCurrencies();
             generate_selection_options( 'select-code-002', currencies );
+
+            const productVariants = JSON.parse($('#productVariants').val());
+            generate_selection_options( 'select-code-003', productVariants );
         });
     </script>
 @endsection
