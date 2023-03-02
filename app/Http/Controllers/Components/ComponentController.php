@@ -39,7 +39,15 @@ class ComponentController extends Controller
     }
 
     /**
-     * Display the resource page of button.
+     * Display the resource page of checkbox.
+     * @return \Illuminate\Http\Response
+     */
+    public function checkbox(){
+        return view('dashboard.demo_components.vs-checkbox');
+    }
+
+    /**
+     * Display the resource page of table.
      * @return \Illuminate\Http\Response
      */
     public function table(){

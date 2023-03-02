@@ -29,6 +29,7 @@ Route::namespace('Components')->group(function(){
     ], function(){
         Route::get('/buttons', 'ComponentController@button');
         Route::get('/dropdowns', 'ComponentController@dropdown');
+        Route::get('/checkboxes', 'ComponentController@checkbox');
         Route::get('/tables', 'ComponentController@table');
     });
 });
