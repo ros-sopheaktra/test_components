@@ -24,6 +24,7 @@
                 'dropdowdata'     => $productVariants,
                 ]
             )
+            <a class="btn btn-outline-success mt-3" href="{{route('input-test')}}">Input testing</a>
         </div>
     </div>
 </div>
