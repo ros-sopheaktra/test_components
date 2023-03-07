@@ -54,4 +54,12 @@ class ComponentController extends Controller
         return view('dashboard.demo_components.vs-table');
     }
 
+    /**
+     * Display the resource page of table.
+     * @return \Illuminate\Http\Response
+     */
+    public function filter(){
+        return view('dashboard.demo_components.vs-filter');
+    }
+
 }

@@ -31,5 +31,6 @@ Route::namespace('Components')->group(function(){
         Route::get('/dropdowns', 'ComponentController@dropdown');
         Route::get('/checkboxes', 'ComponentController@checkbox');
         Route::get('/tables', 'ComponentController@table');
+        Route::get('/filters', 'ComponentController@filter');
     });
 });
