@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Dashboard')->group(function(){
     // route
     Route::get('/', 'DashboardController@index');
+    Route::get('/input','DashboardController@create')->name('input-test');
 });
