@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ModuleQueriesService extends Model
 {
-    protected static $namespace = '\\App\\';
+    protected static $namespace = '\\App\\Models\\';
 
     /**
      * Set respond object data and associative message array by
