@@ -4,7 +4,9 @@
  * @param {*} callBackFunction 
  */
 function selectOnChange(selectId, callBackFunction){
-    $(selectId).on('change', callBackFunction);
+    const selectionId = this.set_unique_select_id(selectId);
+
+    $(selectionId).on('change', callBackFunction);
 };
 
 /**

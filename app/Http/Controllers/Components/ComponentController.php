@@ -25,10 +25,11 @@ class ComponentController extends Controller
         for($i = 0; $i < 5; $i++){
             $productVariant = (object)[
                 'label'           => 'Product Variant '.$i,
-                'value'           => '1',
+                'value'           => $i,
                 'extraAttributes' => (object)[
-                    'color' => 'black'.$i,
-                    'size'  => 'S'.$i,
+                    'name'            => 'Product Variant'.$i,
+                    'alert_quantity'  => $i,
+                    'product_point'   => $i+1,
                 ],
             ];
             $productVariantsCollections->push($productVariant);
