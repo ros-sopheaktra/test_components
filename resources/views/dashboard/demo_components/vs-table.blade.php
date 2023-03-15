@@ -14,6 +14,7 @@
             'thead_unique_element_id'  => 'product_thead_id',
             'tbody_unique_element_id'  => 'product_tbody_id',
             'table_wrapper_class'      => 'table-bordered table-striped',
+            'is_active_search'         => false,
             ]
         )
     </div>
