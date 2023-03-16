@@ -1,27 +1,3 @@
-{{-- product list select --}}
-{{-- <div class="{{$main_div_class}}">
-    <select 
-        id    = "{{ $select_uniqe_id }}" 
-        name  = "{{ $select_name }}" 
-        class = "{{ $select_class }}" 
-        {{ $attr }}
-    >
-        @if ($dropdowntype == "static")
-            @foreach ($productVariants as $productVariant)
-                <option 
-                    value = "{{$productVariant->id}}" 
-                    data-price = "{{$productVariant->price}}" 
-                    data-cost = "{{$productVariant->cost}}" 
-                    product_va_name = "{{$productVariant->name}}" 
-                    data-quantity = "{{$productVariant->quantity}}"
-                >
-                    {{ $productVariant->name }}
-                </option>
-            @endforeach
-        @endif
-    </select>
-</div> --}}
-
 <!-- [ Component Structure Guide ]
     (!) two possibilities of the select should be:
         # static  : 
@@ -46,18 +22,16 @@
         @unless ( empty($prompt) )
             <option value="" selected hidden>{{ ucwords($prompt) }}</option>
         @endunless
+    </select>
 
-        {{-- @if ($selectType === 'static') --}}
-            {{-- <option 
-                value = ""
-                {{ isset($option_attributes) ? $option_attributes : '' }}
-            >
-                Demo Value
-            </option> --}}
-        {{-- @else
-            @foreach ($collections as $item)
-                <option value=""></option>
-            @endforeach
-        @endif --}}
-    </select>    
+    @if ( isset($select_type) 
+        && $select_type === 'dynamic' 
+        && isset($dynamic_options)
+    )
+        <input 
+            type  = "hidden" 
+            id    = "hidden-dynamic-selected-component-{{ $unique_id }}-id" 
+            value = "{{$productVariantsCollections}}"
+        >
+    @endif
 </div>

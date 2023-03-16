@@ -10,27 +10,27 @@
     </div>
     <div class="component-use-case-wrapper bg-dark p-3 m-auto" style="width: 80%; height: 80vh;">
         <!-- simple component that alert any value after selected ( on change deteched ) -->
-        {{-- @include('components.vs-dropdown', [
-            'unique_id'  => 'select-code-001',
-            'prompt'     => 'select month',
-            'selectType' => 'static',
-        ]) --}}
+        @include('components.vs-dropdown', [
+            'unique_id'               => 'select-code-001',
+            'prompt'                  => 'select month',
+            'component_wrapper_class' => 'mb-3'
+        ])
 
         <!-- simple component that alert any value after selected ( on change deteched ) -->
-        {{-- @include('components.vs-dropdown', [
-            'unique_id'  => 'select-code-002',
-            'prompt'     => 'select currency',
-            'selectType' => 'static',
-        ]) --}}
+        @include('components.vs-dropdown', [
+            'unique_id'               => 'select-code-002',
+            'prompt'                  => 'select currency',
+            'component_wrapper_class' => 'mb-3'
+        ])
 
         <!-- dynamic selection -->
         @include('components.vs-dropdown', [
             'component_wrapper_class' => 'mt-3',
             'unique_id'               => 'select-code-003',
             'prompt'                  => 'select product varaint',
-            'selectType'              => 'dynamic',
+            'select_type'             => 'dynamic',
+            'dynamic_options'         => "$productVariantsCollections",
         ])
-        <input type="hidden" id="productVariants" value="{{$productVariantsCollections}}">
 
         <!-- table -->
         @include('components.vs-table', [
@@ -48,24 +48,28 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/components/vs-dropdown.js') }}"></script>
-    {{-- <script src="{{ asset('js/enum/months.js') }}"></script> --}}
-    {{-- <script src="{{ asset('js/enum/currencies.js') }}"></script> --}}
+    <script src="{{ asset('js/enum/months.js') }}"></script>
+    <script src="{{ asset('js/enum/currencies.js') }}"></script>
     <script src="{{ asset('js/utils/text_manippulations.js') }}"></script>
-    <script src="{{ asset('js/components/vs-table.js') }}"></script>
+
     <script src="{{ asset('js/thead/product.js') }}"></script>
+    <script src="{{ asset('js/components/vs-dropdown.js') }}"></script>
+    <script src="{{ asset('js/components/vs-table.js') }}"></script>
     <script src="{{ asset('js/components/vs-search-table.js') }}"></script>
 
     <script>
         $(document).ready(function(){
-            // const months = getMonths();
-            // generate_selection_options( 'select-code-001', months );
+            // example dropdown component with static value
+            const months = getMonths();
+            generate_selection_options( 'select-code-001', months );
 
-            // const currencies = getCurrencies();
-            // generate_selection_options( 'select-code-002', currencies );
+            // example dropdown component with static value and custom method on selected
+            const currencies = getCurrencies();
+            generate_selection_options( 'select-code-002', currencies );
+            vsSelectOnChange('select-code-002', function(){ alert($(this).val()); });
 
-            const productVariants = JSON.parse($('#productVariants').val());
-            generate_selection_options( 'select-code-003', productVariants );
+            // dropdown selection mix with table component
+            generate_selection_options( 'select-code-003', get_hidden_dynamic_options('select-code-003') );
 
             // thead
             const getProductThead = getTheadOfProduct();
@@ -84,7 +88,7 @@
                 ]);
                 generate_tbody_table( 'product_tbody_id', products );
             };
-            selectOnChange( 'select-code-003', listDataInTable );
+            vsSelectOnChange( 'select-code-003', listDataInTable );
         });
 
         //search

@@ -22,17 +22,18 @@ class ComponentController extends Controller
      */
     public function dropdown(){
         $productVariantsCollections = new Collection();
-        for($i = 0; $i < 5; $i++){
-            $productVariant = (object)[
-                'label'           => 'Product Variant '.$i,
-                'value'           => $i,
-                'extraAttributes' => (object)[
-                    'name'            => 'Product Variant'.$i,
-                    'alert_quantity'  => $i,
-                    'product_point'   => $i+1,
-                ],
-            ];
-            $productVariantsCollections->push($productVariant);
+        for( $i = 0; $i < 5; $i++ ){
+            $productVariantsCollections->push(
+                (object)[
+                    'label'           => 'Product Variant '.$i,
+                    'value'           => $i,
+                    'extraAttributes' => (object)[
+                        'name'            => 'Product Variant'.$i,
+                        'alert_quantity'  => $i,
+                        'product_point'   => $i+1,
+                    ],
+                ]
+            );
         }
         $productVariantsCollections = json_encode($productVariantsCollections);
 
