@@ -1,7 +1,7 @@
 const months = Object.freeze([
     {
         label: 'january', 
-        value: 'January',
+        value: 'January', 
     },
     {
         label: 'february', 

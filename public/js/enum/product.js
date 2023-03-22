@@ -1,27 +1,23 @@
 const products = Object.freeze([
     {
-        id             : 1, 
-        name           : 'Product1',
-        alert_quantity : 3,
-        product_point  : 5,
+        name          : 'Water',
+        alertQuantity : 80,
+        productPoint  : 2,
     },
     {
-        id             : 2, 
-        name           : 'Product2',
-        alert_quantity : 2,
-        product_point  : 8,
+        name          : 'Cake',
+        alertQuantity : 5,
+        productPoint  : 2,
     },
     {
-        id             : 3, 
-        name           : 'Product3',
-        alert_quantity : 6,
-        product_point  : 5,
+        name          : 'IPhone',
+        alertQuantity : 150,
+        productPoint  : 10,
     },
     {
-        id             : 4, 
-        name           : 'Product4',
-        alert_quantity : 8,
-        product_point  : 1,
+        name          : 'AirPod',
+        alertQuantity : 100,
+        productPoint  : 9.8,
     },
 ]);
 

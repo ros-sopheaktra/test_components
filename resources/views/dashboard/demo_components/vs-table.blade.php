@@ -11,10 +11,9 @@
     <div class="component-use-case-wrapper p-3 m-auto" style="width: 80%; height: 80vh;">
         <!-- seach content container -->
         @include('components.vs-table', [
-            'thead_unique_element_id'  => 'product_thead_id',
-            'tbody_unique_element_id'  => 'product_tbody_id',
-            'table_wrapper_class'      => 'table-bordered table-striped',
-            'is_active_search'         => false,
+            'thead_id'            => 'product_thead_id',
+            'tbody_id'            => 'product_tbody_id',
+            'table_wrapper_class' => 'table-bordered table-striped',
             ]
         )
     </div>
@@ -30,7 +29,7 @@
        $(document).ready(function(){
             // thead
             const getProductThead = getTheadOfProduct();
-            generate_thead_table( 'product_thead_id', getProductThead );
+            generate_table_thead( 'product_thead_id', getProductThead );
 
             // tbody
             const getProductBodies = getProducts();

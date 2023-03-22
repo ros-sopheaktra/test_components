@@ -34,14 +34,14 @@
 
         <!-- table -->
         @include('components.vs-table', [
-            'main_class_wrapper'       => 'mt-4',
-            'table_wrapper_class'      => 'table-bordered text-white',
-            'thead_unique_element_id'  => 'product_thead_id',
-            'tbody_unique_element_id'  => 'product_tbody_id',
-            'is_active_search'         => true,
-            'table_id'                 => 'product_table',
-            'input_id_search'          => 'input_search_box_id',
-            'input_search_class'       => 'search_box_class',
+            'component_wrapper_class' => 'mt-4',
+            'table_wrapper_class'     => 'table-bordered text-white',
+            'thead_id'                => 'product_thead_id',
+            'tbody_id'                => 'product_tbody_id',
+            'has_filter'              => true,
+            'table_id'                => 'product_table',
+            'table_filter_id'         => 'input_search_box_id',
+            'table_filter_class'      => 'search_box_class',
             ]
         )
     </div>
@@ -73,14 +73,13 @@
 
             // thead
             const getProductThead = getTheadOfProduct();
-            generate_thead_table( 'product_thead_id', getProductThead );
+            generate_table_thead( 'product_thead_id', getProductThead );
 
             // validate mandatory fields before process submit
             const listDataInTable = function() {
                 const state = $(this);
                 const products = Object.freeze([
                     {
-                        id             : state.val(), 
                         name           : state.find(":selected").attr('name'),
                         alert_quantity : state.find(":selected").attr('alert_quantity'),
                         product_point  : state.find(":selected").attr('product_point'),
