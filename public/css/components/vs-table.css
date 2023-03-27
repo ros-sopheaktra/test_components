@@ -1,0 +1,10 @@
+/* product search */
+.search_box_class {
+    width: 100px;
+    transition: 0.5s;
+    float: right;
+}
+.search_box_class:focus {
+    width: 300px;
+    transition: 0.5s;
+}

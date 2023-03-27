@@ -13,7 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// this routes was created for use of the compoents [ logic mix with the use of components ]
 Route::namespace('Dashboard')->group(function(){
-    // route
-    Route::get('/', 'DashboardController@index');
+    Route::group([
+        'prefix' => '/'
+    ], function(){
+        Route::get('/', 'DashboardController@index');
+    });
+});
+
+// this routes was created for testing each individual components
+Route::namespace('Components')->group(function(){
+    Route::group([
+        'prefix' => '/components/demo/'
+    ], function(){
+        Route::get('/buttons', 'ComponentController@button');
+        Route::get('/dropdowns', 'ComponentController@dropdown');
+        Route::get('/checkboxes', 'ComponentController@checkbox');
+        Route::get('/tables', 'ComponentController@table');
+        Route::get('/filters', 'ComponentController@filter');
+    });
 });

@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::namespace('Api')->group(function(){
+    // dynamic modules filter routers [begin]
+    Route::get('{value}/filter', 'ApiComponentController@filter')->name('api-modules-filter');
+    // dynamic modules filter routers [end]
+});

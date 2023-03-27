@@ -46,7 +46,7 @@
     <script src="{{ asset('js/dashboard/components/vs-button.js') }}"></script>
     <script>
         $(document).ready(function(){
-            buttonOnClick('#btn-1', showAlert);
+            vsButtonOnClick('btn-1', showAlert);
         });
 
         function showAlert(){
